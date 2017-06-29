@@ -1,0 +1,750 @@
+
+<!-- saved from url=(0065)http://localhost:8080/puntoventa/Hub?funcion=usuarios#seleccionar -->
+<html><script id="tinyhippos-injected">if (window.top.ripple) { window.top.ripple("bootstrap").inject(window, document); }</script><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+    
+
+
+
+
+    
+        
+        <title>Punto de Venta</title>
+
+        <link rel="stylesheet" type="text/css" href="./Punto de Venta_files/bootstrap-spacelab.min.css">
+        <link rel="stylesheet" type="text/css" href="./Punto de Venta_files/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="./Punto de Venta_files/bootstrap-select.min.css">
+        <link rel="stylesheet" type="text/css" href="./Punto de Venta_files/jquery.dataTables.min.css">
+        <link href="./Punto de Venta_files/css" rel="stylesheet" type="text/css">
+
+        <script src="./Punto de Venta_files/jquery-1.11.3.min.js"></script>
+        <script src="./Punto de Venta_files/bootstrap.min.js"></script>
+        <script src="./Punto de Venta_files/bootstrap-select.min.js"></script>
+        <script src="./Punto de Venta_files/jquery.validate.min.js"></script>
+        <script src="./Punto de Venta_files/jquery.formatCurrency-1.4.0.min.js"></script>
+        <script src="./Punto de Venta_files/jquery.formatCurrency.all.js"></script>
+        <script src="./Punto de Venta_files/jquery.numeric.js"></script>
+        <script src="./Punto de Venta_files/jquery.dataTables.min.js"></script>
+        <script type="text/javascript">
+
+            $(document).ready(function () {
+                $(window).keydown(function (event) {
+                    if (event.keyCode == 13) {
+                        event.preventDefault();
+                        return false;
+                    }
+                });
+            });
+
+        </script>
+
+        <style type="text/css">
+
+            @font-face {
+                font-family: 'NotoSans';
+                src:
+                    local('NotoSans'),
+                    local('NotoSans-Regular'),
+                    url('NotoSans-Regular.ttf');
+            }
+
+
+            body {
+                -webkit-background-size: cover;
+                -moz-background-size: cover;
+                -o-background-size: cover;
+                background-size: cover;
+                font-family: 'Noto Sans', sans-serif;
+                padding-top: 50px;
+                /*modificacion */
+                background-color: #f5f2f0; 
+            }
+
+            ul.menu_main li.active a {
+                color: #ffffff !important;
+            }
+
+            ul.menu_main li a {
+                /*color: #acbad5 !important;*/
+                color: #9d9d9d !important;
+            }
+
+            ul.menu_main li a:hover {
+                background-color: #456e9d;
+                color: #ffffff !important;
+            }
+
+            .row-height {
+                height: 100%;
+            }
+            
+            
+            a.list-group-item:hover,
+            a.list-group-item:focus {
+                color: #555;
+                text-decoration: none;
+                background-color: #f5f5f5;
+                border-right:10px solid #337ab7;
+                border-top:2px solid #f5f5f5;
+            }
+            
+            
+          
+            .list-group .list-group-item {
+                color: #f5f2f0 !important;
+                background-color: #67615c !important;
+                border-color: #67615c     !important;
+                
+            }
+            
+            .list-group-item, .list-group-item:hover,
+            .list-group-item, .list-group-item:focus
+            {
+                color: #cc8977 !important;
+                
+            }
+            
+            
+            
+           /* .list-group-item.active {
+                color: #cc8977 !important;
+            }
+            
+            .list-group-item .list-group-item, .list-group-item:hover {
+                color: #cc8977 !important;
+                
+            }
+            */
+            
+            
+            
+            
+            
+
+            .nopadding {
+                padding: 0px 0px 10px 0px !important;
+                /*margin: 0 !important;*/
+                /*padding: 0px 0px 0px 10px !important;*/
+                margin: 0px 0px 0px 10px !important;
+                background-color: #67615c;
+                height: 100%;
+            }
+            
+            .nopadding_conhead {
+                padding: 0px 0px 0px 0px !important;
+                /*margin: 0 !important;*/
+                /*padding: 0px 0px 0px 10px !important;*/
+                
+                margin: 0px 0px 0px 0px !important;
+                
+            }
+
+            .nopadding_contenedor {
+                padding: 0px 0px 0px 10px !important;
+                /*margin: 0 !important;*/
+                /*padding: 0px 0px 0px 10px !important;*/
+                margin: 0px 0px 0px 10px !important;
+                background-color: #f5f2f0;
+                height: 100%;
+                
+            }
+
+            .page-header-margin{
+                margin-top: 10px;
+            }
+
+            .panel.no_top_border {
+                border-top: none;
+            }
+            
+            
+           
+            
+         
+
+
+
+
+
+
+        </style>
+    </head>
+    <body>
+        <div class="container-full">
+            <nav class="navbar navbar-default navbar-fixed-top">
+                <!-- <div class="container">
+                    ...
+                </div> -->
+                <div class="container-fluid">
+
+
+                    <div class="navbar-header">
+
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#pv-hub-navbar-collapse-1" aria-expanded="false">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="http://localhost:8080/puntoventa/Hub?funcion=usuarios#">
+                            &nbsp;&nbsp;Punto de Venta v1.0
+
+                        </a>
+                    </div>
+
+                    <div class="collapse navbar-collapse" id="pv-hub-navbar-collapse-1">
+
+                        <form class="navbar-form navbar-left" role="search">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Buscar">
+                            </div>
+                            <button type="submit" class="btn btn-default">Buscar</button>
+                        </form>
+
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a href="http://localhost:8080/puntoventa/Hub?funcion=usuarios#">Punto de Venta</a></li>
+                            <li class="dropdown">
+                                <a href="http://localhost:8080/puntoventa/Hub?funcion=usuarios#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Panel de Usuario <span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a role="button" data-toggle="collapse" href="http://localhost:8080/puntoventa/Hub?funcion=usuarios#collapseExample" aria-expanded="false" aria-controls="collapseExample">Action</a></li>
+                                    <li><a href="http://localhost:8080/puntoventa/Hub?funcion=usuarios#">Another action</a></li>
+                                    <li><a href="http://localhost:8080/puntoventa/Hub?funcion=usuarios#">Something else here</a></li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="http://localhost:8080/puntoventa/Hub?funcion=usuarios#">Cerrar Sesión</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>    
+                </div>
+
+
+
+            </nav>
+            
+            <div class="row">
+                <div class="col-xs-12 col-sm-2  nopadding">
+                    
+                    
+                    
+                    <div class="list-group">
+                        <a class="list-group-item" role="button" data-toggle="collapse" href="http://localhost:8080/puntoventa/Hub?funcion=usuarios#collapseAdministracion" aria-expanded="false" aria-controls="collapseAdministracion"><i class="fa fa-user-circle fa-2x fa-fw" aria-hidden="true"></i>&nbsp; Administración</a>
+                        <div class="collapse" id="collapseAdministracion">
+                            <a class="list-group-item" href="http://localhost:8080/puntoventa/Hub?funcion=usuarios#">&nbsp; Empresa</a>
+                            <a class="list-group-item" href="http://localhost:8080/puntoventa/Hub?funcion=usuarios#">&nbsp; Usuarios</a>
+                            <a class="list-group-item" href="http://localhost:8080/puntoventa/Hub?funcion=usuarios#">&nbsp; Roles</a>
+                            <a class="list-group-item" href="http://localhost:8080/puntoventa/Hub?funcion=usuarios#">&nbsp; Vendedores</a>
+                           
+                        </div>
+                        <a class="list-group-item" href="http://localhost:8080/puntoventa/Hub?funcion=usuarios#"><i class="fa fa-book fa-2x fa-fw" aria-hidden="true"></i>&nbsp; Library</a>
+                        <a class="list-group-item" href="http://localhost:8080/puntoventa/Hub?funcion=usuarios#"><i class="fa fa-pencil fa-fw" aria-hidden="true"></i>&nbsp; Applications</a>
+                        <a class="list-group-item" href="http://localhost:8080/puntoventa/Hub?funcion=usuarios#"><i class="fa fa-cog fa-fw" aria-hidden="true"></i>&nbsp; Settings</a>
+                    </div>
+
+                    
+                </div>
+                
+                <div class="col-xs-12 col-sm-9 nopadding_contenedor">
+                    
+                    <div id="contenedor">
+                        
+
+
+
+
+
+
+<script type="text/javascript">
+
+    $(document).ready(function (e) {
+        
+        
+        
+        $("input[type=text]").focus(function () {
+            $(this).select();
+        });
+
+        $("input[type=text]").blur(function (e) {
+            $(this).val($.trim($(this).val().toUpperCase()));
+        });
+        
+        
+        $("#form_usuario").validate({
+            ignore: [],
+            invalidHandler: function (event, validator) {
+                $("#moperacion").modal("show");
+                $("#modal_mensaje").html("<span style=\"color: red\" class=\"fa fa-exclamation-triangle fa-3x\"></span>&nbsp;<label for=\"modal_mensaje\" style=\"font-size: 16px; font-weight: bolder\">Los datos no son validos o falta información, por favor revise los campos del formulario.</label></div>");
+
+            },
+            rules: {
+                nombre: {
+                    required: true,
+                    minlength: 3,
+                    maxlength: 200
+                },
+                usuario: {
+                    required: true,
+                    minlength: 8,
+                    maxlength: 50
+                },
+                password:{
+                    required: true,
+                    minlength: 8,
+                    maxlength: 20
+                },
+                repassword:{
+                    equalTo: "#password"
+                },
+                email: {
+                    required: true,
+                    email: true
+                },
+                rol: {
+                    required: true
+                }
+            },
+            
+            messages: {
+                nombre: {
+                    required: "&nbsp;Por favor introduzca un nombre valido para el usuario",
+                    minlength: "&nbsp;El número de caracteres no es valido, se espera de 3 a 200 caracteres"
+                },
+                usuario: {
+                    required: "&nbsp;Por favor introduzca el RFC del Proveedor",
+                    minlength: "&nbsp;El número de caracteres no es valido, se espera de 8 a 50 caracteres"
+                },
+                password: "&nbsp;Por favor introduzca un password valido",
+                repassword: "&nbsp;Los password no coinciden",
+                email: "&nbsp;Por favor introduzca un correo electronico valido.",
+                rol: "&nbsp;Por favor, Seleccione un rol para el usuario."
+                
+
+            },
+            submitHandler: function (form) {
+
+                $("#modal_mensaje").html("<span class='fa fa-cog fa-spin fa-3x fa-fw'></span><label for=\"modal_mensaje\" style=\"font-size: 18px; font-weight: bolder\">Espere un momento por favor...</label></div>");
+                $("#moperacion").modal("show");
+
+                var id = $("#id").val();
+                var nombre = $("#nombre").val();
+                var usuario = $("#usuario").val();
+                var password = $("#password").val();
+                var domicilio = $("#domicilio").val();
+                var ciudad = $("#ciudad").val();
+                var email = $("#email").val();
+                var telefono = $("#telefono").val();
+                var celular = $("#celular").val();
+                var id_rol = $("#id_rol").val();
+                var id_vendedor = $("#id_vendedor").val();
+                var comentario = $("#comentario").val();
+                var operacion = "";
+                
+                if(id == 0){
+                    operacion = "guardar";
+                }else{
+                    operacion = "actualizar";
+                }
+                
+                formData = {
+                    id: id,
+                    nombre: nombre,
+                    usuario: usuario,
+                    password: password,
+                    domicilio: domicilio,
+                    ciudad: ciudad,
+                    email: email,
+                    telefono: telefono,
+                    celular: celular,
+                    id_rol : id_rol,
+                    id_vendedor : id_vendedor,
+                    comentario: comentario,
+                    operacion: operacion
+                };
+
+                $.post("./admon/UsuarioController.pv", formData, function (data) {
+                    $("#operaciones").html(data);
+                    
+                    if ((parseInt($("#resultado").val()) != 0)) {
+                        
+                        if(operacion == "guardar"){
+                            $("#modal_mensaje").html("<span style=\"color: green\" class=\"fa fa-check-circle fa-3x\"></span><label for=\"modal_mensaje\" style=\"font-size: 18px; font-weight: bolder\">El registro se ha guardado correctamente.</label></div>");
+                            $("#id").val($("#resultado").val());
+                            $("#no_usuario").val($("#resultado").val());
+                        }else{
+                            
+                            $("#modal_mensaje").html("<span style=\"color: green\" class=\"fa fa-check-circle fa-3x\"></span><label for=\"modal_mensaje\" style=\"font-size: 18px; font-weight: bolder\">El registro se ha actualizado correctamente.</label></div>");
+                        }
+                    } else {
+                        $("#modal_mensaje").html("<span style=\"color: red\" class=\"fa fa-exclamation-triangle fa-3x\"></span>&nbsp;<label for=\"modal_mensaje\" style=\"font-size: 16px; font-weight: bolder\">El sistema ha lanzado el siguiente error: Codigo Error: "+$("#codigo_error").val() +" "+ $("#mensaje").val() + ".</label></div>");
+
+                    }
+                    
+                    
+                });
+                //asdasd$(form).submit();*/
+            }
+
+        });  // fin $("#form_proveedor").validate
+        
+        
+        $("#nuevo").click(function(e){
+            $("#mensaje_comando").html("<span class='fa fa-exclamation-triangle fa-3x'></span>&nbsp;<label for=\"modal_mensaje\" style=\"font-size: 18px; font-weight: bolder\">¿Desea agregar un nuevo vendedor?\n\nLos cambios que no ha guardado no tendran efecto en el registro.</label></div>");
+            $("#mcomando").modal("show");
+        });
+        
+        $("#recargar").click(function(e){
+            $("#funcion").val("usuarios_lista");
+            $('#form_navega').attr('action', "./Hub");
+            $("#form_navega").submit();
+        });
+        
+        
+        $("#aceptar_comando").click(function(e){
+            $("#funcion").val("usuarios");
+            $('#form_navega').attr('action', "./Hub");
+            $("#form_navega").submit();
+        });
+        
+        
+        
+        $("#btn_rol").click(function(){
+            
+            $("#modal_mensaje").html("<span class='fa fa-cog fa-spin fa-3x fa-fw'></span><label for=\"modal_mensaje\" style=\"font-size: 18px; font-weight: bolder\">Espere un momento por favor...</label></div>");
+            $("#moperacion").modal("show");
+            formData = {
+                        id_rol: $("#id_rol").val(),
+                        operacion: "carga_lista_rol"
+                    };
+
+            $.post("./admon/UsuarioController.pv", formData, function (data) {
+                $("#modal_mensaje").html(data);
+            });
+            
+            
+        });
+        
+        $("#btn_vendedor").click(function(){
+            
+            $("#modal_mensaje").html("<span class='fa fa-cog fa-spin fa-3x fa-fw'></span><label for=\"modal_mensaje\" style=\"font-size: 18px; font-weight: bolder\">Espere un momento por favor...</label></div>");
+            $("#moperacion").modal("show");
+            formData = {
+                        id_rol: $("#id_vendedor").val(),
+                        operacion: "carga_lista_vendedores"
+                    };
+
+            $.post("./admon/UsuarioController.pv", formData, function (data) {
+                $("#modal_mensaje").html(data);
+            });
+            
+            
+        });
+        
+        
+
+    });
+</script>
+
+<style type="text/css">
+   
+    
+     
+  
+    .panel .panel-defautl  hr {
+  -moz-border-bottom-colors: none;
+  -moz-border-image: none;
+  -moz-border-left-colors: none;
+  -moz-border-right-colors: none;
+  -moz-border-top-colors: none;
+  border-color: #EEEEEE -moz-use-text-color #FFFFFF;
+  border-style: solid none;
+  border-width: 1px 0;
+  margin: 18px 20px 18px 0px;
+}
+
+
+</style>
+
+
+        
+        
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+        
+
+
+<div class="row"><div class="col-xs-12">&nbsp;</div></div>
+<form method="post" id="form_navega" name="form_navega">
+    <input type="hidden" id="funcion" name="funcion">
+</form>
+
+
+<form class="form-horizontal" method="post" id="form_usuario" name="form_usuario" novalidate="novalidate">
+
+    <div id="operaciones"></div>
+    
+    <div class="row"><div class="col-xs-12">
+        <div class="btn-group" role="group" aria-label="">
+          <button type="submit" class="btn btn-default" id="guardar" name="guardar"><span class="fa fa-floppy-o"></span>&nbsp;Guardar</button>
+          <button type="button" class="btn btn-default" id="nuevo" name="nuevo"><span class="fa fa fa-file-o"></span>&nbsp;Nuevo</button>
+          <button type="button" class="btn btn-default" id="recargar" name="recargar"><span class="fa fa-refresh"></span>&nbsp;Recargar</button>
+        </div>
+        <hr style="width: 100%; color: #d0cdcb; height: 0.2px; background-color:#000000;">
+                  
+    </div>
+    </div>
+    
+    <div class="panel panel-default">
+        <div class="panel-heading">Usuario</div>
+        <div class="panel-body">
+
+           
+                <!-- contenido del panel -->
+
+                <input type="hidden" id="id" name="id" value="0">
+                <div class="row"><div class="col-xs-12">&nbsp;</div></div>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="form-group">
+                            <label for="no_usuario" class="col-md-12 col-lg-2">Núm.<label style="color: red">*</label></label>
+                            <div class="col-md-12 col-lg-10">
+                                <div class="controls form-inline">
+                                    <input type="text" class="form-control" id="no_usuario" name="no_usuario" value="0" placeholder="" size="20" maxlength="20" disabled="disabled">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>                
+
+                    <div class="col-xs-12">
+                        <div class="form-group">
+                            <label for="nombre" class="col-md-12 col-lg-2">Nombre<label style="color: red">*</label></label>
+                            <div class="col-md-12 col-lg-10">
+                                <div class="controls form-inline">
+                                    <input type="text" class="form-control" id="nombre" name="nombre" value="" placeholder="" size="50" maxlength="200">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="row"><div class="col-xs-12"><hr style="width: 95%; color: #EEEEEE; height: 0.2px; background-color:#EEEEEE;"></div></div>                
+                    <div class="col-xs-12">
+                        <div class="form-group">
+                            <label for="usuario" class="col-md-12 col-lg-2">Usuario<label style="color: red">*</label></label>
+                            <div class="col-md-12 col-lg-10">
+                                <div class="controls form-inline">
+                                    <input type="text" class="form-control" id="usuario" name="usuario" value="" placeholder="" size="30" maxlength="50">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-xs-12">
+                        <div class="form-group">
+                            <label for="password" class="col-md-12 col-lg-2">Password<label style="color: red">*</label></label>
+                            <div class="col-md-12 col-lg-10">
+                                <div class="controls form-inline">
+                                    <input type="password" class="form-control" id="password" name="password" value="" placeholder="" size="30" maxlength="50">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12">
+                        <div class="form-group">
+                            <label for="repassword" class="col-md-12 col-lg-2">Confirmar<label style="color: red">*</label></label>
+                            <div class="col-md-12 col-lg-10">
+                                <div class="controls form-inline">
+                                    <input type="password" class="form-control" id="repassword" name="repassword" value="" placeholder="" size="30" maxlength="50">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>                
+                                    
+                    <div class="row"><div class="col-xs-12"><hr style="width: 95%; color: #EEEEEE; height: 0.2px; background-color:#EEEEEE;"></div></div>                                
+                                    
+                                    
+                    <div class="col-xs-12">
+                        <div class="form-group">
+                            <label for="domicilio" class="col-md-12 col-lg-2">Domicilio</label>
+                            <div class="col-md-12 col-lg-10">
+                                <div class="controls form-inline">
+                                    <input type="text" class="form-control" id="domicilio" name="domicilio" value="" placeholder="" size="50" maxlength="200">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-xs-12">
+                        <div class="form-group">
+                            <label for="ciudad" class="col-md-12 col-lg-2">Ciudad</label>
+                            <div class="col-md-12 col-lg-10">
+                                <div class="controls form-inline">
+                                    <input type="text" class="form-control" id="ciudad" name="ciudad" value="" placeholder="" size="50" maxlength="100">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>                
+                                    
+                    <div class="col-xs-12">
+                        <div class="form-group">
+                            <label for="correo" class="col-md-12 col-lg-2">Correo<label style="color: red">*</label></label>
+                            <div class="col-md-12 col-lg-10">
+                                <div class="controls form-inline">
+                                    <input type="text" class="form-control" id="email" name="email" value="" placeholder="" size="50" maxlength="150">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12">
+                        <div class="form-group">
+                            <label for="telefono" class="col-md-12 col-lg-2">teléfono</label>
+                            <div class="col-md-12 col-lg-10">
+                                <div class="controls form-inline">
+                                    <input type="text" class="form-control" id="telefono" name="telefono" value="" placeholder="" size="30" maxlength="45">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12">
+                        <div class="form-group">
+                            <label for="celualar" class="col-md-12 col-lg-2">Celular</label>
+                            <div class="col-md-12 col-lg-10">
+                                <div class="controls form-inline">
+                                    <input type="text" class="form-control" id="celular" name="celular" value="" placeholder="" size="30" maxlength="45">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                                    
+                    <div class="row"><div class="col-xs-12"><hr style="width: 95%; color: #EEEEEE; height: 0.2px; background-color:#EEEEEE;"></div></div>
+                    <div class="col-xs-12">
+                        <div class="form-group">
+                            <label for="rol" class="col-md-12 col-lg-2">Rol<label style="color: red">*</label></label>
+                            <div class="col-md-12 col-lg-10">
+                                <div class="controls form-inline">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" id="rol" name="rol" value="0" placeholder="" size="30" maxlength="50">
+                                        <span class="input-group-btn">
+                                            <button class="btn btn-default" id="btn_rol" type="button">Ir</button>
+                                        </span>
+                                        <input type="hidden" class="form-control" id="id_rol" name="id_rol" value="">
+                                    </div> <!-- fin input group -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>                
+                    
+                    <div class="col-xs-12">
+                        <div class="form-group">
+                            <label for="vendedor" class="col-md-12 col-lg-2">Vendedor</label>
+                            <div class="col-md-12 col-lg-10">
+                                <div class="controls form-inline">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" id="vendedor" name="vendedor" value="0" placeholder="" size="30" maxlength="50">
+                                        <span class="input-group-btn">
+                                            <button class="btn btn-default" id="btn_vendedor" type="button">Ir</button>
+                                        </span>
+                                        <input type="hidden" class="form-control" id="id_vendedor" name="id_vendedor" value="">
+                                    </div> <!-- fin input group -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                                        
+                    <div class="row"><div class="col-xs-12"><hr style="width: 95%; color: #EEEEEE; height: 0.2px; background-color:#EEEEEE;"></div></div>                    
+                    <div class="col-xs-12">
+                        <div class="form-group">
+                            <label for="comentario" class="col-md-12 col-lg-2">Comentario</label>
+                            <div class="col-md-12 col-lg-10">
+                                <div class="controls form-inline">
+                                    <input type="text" class="form-control" id="comentario" name="comentario" value="" placeholder="" size="50" maxlength="200">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>                
+                </div>
+                
+                <!--<div class="row">
+                    <div class="col-xs-12 text-right">
+                        <button type="submit" id="guardar" class="btn btn-success"><span class="fa fa-floppy-o"></span> Guardar </button>
+                        <button type="button" id="cancelar" class="btn btn-danger"><span class="fa fa-times"></span> Cancelar </button>
+                        <button type="button" id="nuevo" class="btn btn-default"><span class="fa fa-file-o"></span> Nuevo </button>
+                    </div>
+
+                </div> -->
+
+
+
+        </div>    <!-- panel-body -->
+    </div> <!-- panel-heading -->
+    
+    
+    <div class="modal fade" id="moperacion" tabindex="-1" role="dialog" aria-labelledby="modal-operaciones">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Punto de Venta</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+
+                        <div class="col-xs-12">
+                            <div id="modal_mensaje">
+                                <label style="font-size: 18px; font-weight: bolder"><span class="fa fa-spinner fa-pulse fa-3x fa-fw"></span>&nbsp;  Espere un momento por favor.</label>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                    
+                  </div>
+            </div>
+        </div>
+    </div>
+    
+    
+</form>
+                        <div class="collapse" id="collapseExample">
+                            <div class="well">
+                                ...
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>     
+    
+
+</body></html>

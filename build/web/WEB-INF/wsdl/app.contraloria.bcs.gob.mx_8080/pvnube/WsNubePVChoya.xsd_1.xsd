@@ -1,0 +1,68 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is JAX-WS RI 2.2-hudson-740-. --><xs:schema xmlns:tns="http://ws.pv.sys.choya.app.nube/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://ws.pv.sys.choya.app.nube/">
+
+<xs:element name="agregarSucursal" type="tns:agregarSucursal" />
+
+<xs:element name="agregarSucursalM2" type="tns:agregarSucursalM2" />
+
+<xs:element name="agregarSucursalM2Response" type="tns:agregarSucursalM2Response" />
+
+<xs:element name="agregarSucursalResponse" type="tns:agregarSucursalResponse" />
+
+<xs:element name="hello" type="tns:hello" />
+
+<xs:element name="helloResponse" type="tns:helloResponse" />
+
+<xs:complexType name="agregarSucursalM2">
+<xs:sequence>
+<xs:element name="descripcion" type="xs:string" minOccurs="0" />
+<xs:element name="tipo" type="xs:int" />
+<xs:element name="sync_tiempo" type="xs:int" />
+<xs:element name="sync_proveedores" type="xs:int" />
+<xs:element name="id_usuario" type="xs:int" />
+<xs:element name="sync_clientes" type="xs:int" />
+<xs:element name="usuario" type="xs:string" minOccurs="0" />
+<xs:element name="contrasena" type="xs:string" minOccurs="0" />
+<xs:element name="ip" type="xs:string" minOccurs="0" />
+<xs:element name="host" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="agregarSucursalM2Response">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="hello">
+<xs:sequence>
+<xs:element name="name" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="helloResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="agregarSucursal">
+<xs:sequence>
+<xs:element name="descripcion" type="xs:string" minOccurs="0" />
+<xs:element name="tipo" type="xs:int" minOccurs="0" />
+<xs:element name="sync_tiempo" type="xs:int" minOccurs="0" />
+<xs:element name="sync_proveedores" type="xs:int" minOccurs="0" />
+<xs:element name="id_usuario" type="xs:int" minOccurs="0" />
+<xs:element name="sync_clientes" type="xs:int" minOccurs="0" />
+<xs:element name="usuario" type="xs:string" minOccurs="0" />
+<xs:element name="contrasena" type="xs:string" minOccurs="0" />
+<xs:element name="ip" type="xs:string" minOccurs="0" />
+<xs:element name="host" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="agregarSucursalResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:int" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

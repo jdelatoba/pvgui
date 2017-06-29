@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.3.1.final using JasperReports Library version 6.3.1  -->
+<!-- 2016-10-31T11:32:00 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="prueba_graficas" pageWidth="792" pageHeight="612" orientation="Landscape" columnWidth="752" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="3e8ed8ba-05eb-4bdd-970b-ac6ef0820ec2">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Agenda-local"/>
+	<parameter name="inicio" class="java.lang.String">
+		<defaultValueExpression><![CDATA["2016/10/01 00:00"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="fin" class="java.lang.String">
+		<defaultValueExpression><![CDATA["2016/10/31 23:00"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="inicio_format" class="java.lang.String"/>
+	<parameter name="fin_format" class="java.lang.String"/>
+	<queryString language="SQL">
+		<![CDATA[select  count(a.id) num_evento
+,a.dependencia_id
+,b.nombre as dependencia
+from ag_evento a
+left join cat_dependencia b
+on a.dependencia_id = b.id
+where a.cuando between str_to_date($P{inicio},'%Y/%m/%d %H:%i:%s')
+and str_to_date($P{fin},'%Y/%m/%d %H:%i:%s')
+group by dependencia_id
+order by dependencia]]>
+	</queryString>
+	<field name="num_evento" class="java.lang.Long"/>
+	<field name="dependencia_id" class="java.lang.Integer"/>
+	<field name="dependencia" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="91" splitType="Stretch">
+			<image hAlign="Center" vAlign="Middle" onErrorType="Blank">
+				<reportElement x="0" y="2" width="250" height="78" uuid="9e1c1771-90de-4b6f-beb8-c5b3db9a89ed"/>
+				<imageExpression><![CDATA["http://agenda.bcs.gob.mx:8080/agenda/resources/img/logo-gobbcs.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="280" y="32" width="50" height="20" uuid="4fc1c0e0-6ea2-4e41-8c1b-92976ffb9cc9"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="MiLetra" isBold="true"/>
+				</textElement>
+				<text><![CDATA[INICIO:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="330" y="32" width="100" height="20" uuid="c381b8de-d31b-496d-b40e-d441b914bed9">
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="MiLetra" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{inicio_format}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="250" y="2" width="500" height="30" uuid="10912350-4a92-4834-8523-722404987508"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="MiLetra" size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SECRETARÍA PARTICULAR]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="550" y="32" width="50" height="20" uuid="1e922d56-470f-4960-90f4-1b6229762e2f">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font fontName="MiLetra" isBold="true"/>
+				</textElement>
+				<text><![CDATA[HASTA:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="600" y="32" width="100" height="20" uuid="a4518885-2cfe-4797-b452-fa756f11d494">
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="MiLetra" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{fin_format}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="20" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="0" width="480" height="20" backcolor="#EBEBEB" uuid="22f44471-dfdb-4bc9-bcf3-b701a85ede7a">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="MiLetra" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DEPENDENCIA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="480" y="0" width="270" height="20" backcolor="#EBEBEB" uuid="70bdf05e-e6ff-4289-8daa-13e91b276232">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="MiLetra" isBold="true"/>
+				</textElement>
+				<text><![CDATA[NO. EVENTOS]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="0" y="0" width="480" height="20" uuid="60866f41-4518-4515-a706-560a8605e3ec">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font fontName="MiLetra" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{dependencia}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="480" y="0" width="270" height="20" uuid="e72e5ac4-8dd4-4bc4-985b-d4ee222c899c"/>
+				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="MiLetra" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{num_evento}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="520" splitType="Stretch">
+			<bar3DChart>
+				<chart evaluationTime="Report">
+					<reportElement x="20" y="40" width="721" height="470" isRemoveLineWhenBlank="true" uuid="ec4d8023-32b3-4a9c-ad2e-4b32cf102300"/>
+					<chartTitle/>
+					<chartSubtitle/>
+					<chartLegend/>
+				</chart>
+				<categoryDataset>
+					<categorySeries>
+						<seriesExpression><![CDATA[$F{dependencia}]]></seriesExpression>
+						<categoryExpression><![CDATA[0]]></categoryExpression>
+						<valueExpression><![CDATA[$F{num_evento}]]></valueExpression>
+					</categorySeries>
+				</categoryDataset>
+				<bar3DPlot>
+					<plot/>
+					<itemLabel/>
+					<categoryAxisFormat>
+						<axisFormat labelColor="#000000" tickLabelColor="#000000" axisLineColor="#000000"/>
+					</categoryAxisFormat>
+					<valueAxisFormat>
+						<axisFormat labelColor="#000000" tickLabelColor="#000000" axisLineColor="#000000"/>
+					</valueAxisFormat>
+				</bar3DPlot>
+			</bar3DChart>
+			<staticText>
+				<reportElement x="20" y="10" width="721" height="20" uuid="213f7bf9-b0cc-4fac-848f-9d159460a57c"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="MiLetra" isBold="true"/>
+				</textElement>
+				<text><![CDATA[RESUMEN DE EVENTOS POR DEPENDENCIA]]></text>
+			</staticText>
+		</band>
+	</summary>
+</jasperReport>

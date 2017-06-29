@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/Users/Rembao/ProyectoPuntoVenta/pvgui/pvgui/src/java/app/choya/sys/pv/controller/Concentrador.java</file>
+            <file>file:/Users/Rembao/ProyectoPuntoVenta/pvgui/pvgui/web/WEB-INF/view/catalogos/articulo_lista.jsp</file>
+            <file>file:/Users/Rembao/ProyectoPuntoVenta/pvgui/pvgui/src/java/app/choya/sys/pv/dao/Urleables.java</file>
+            <file>file:/Users/Rembao/ProyectoPuntoVenta/pvgui/pvgui/web/WEB-INF/view/catalogos/proveedor.jsp</file>
+            <file>file:/Users/Rembao/ProyectoPuntoVenta/pvgui/pvgui/web/WEB-INF/view/catalogos/articulo.jsp</file>
+            <file>file:/Users/Rembao/ProyectoPuntoVenta/pvgui/pvgui/web/WEB-INF/view/main/index.jsp</file>
+            <file>file:/Users/Rembao/ProyectoPuntoVenta/pvgui/pvgui/src/java/app/choya/sys/pv/catalogo/servlet/ProveedorController.java</file>
+            <file>file:/Users/Rembao/ProyectoPuntoVenta/pvgui/pvgui/web/WEB-INF/view/catalogos/proveedor_lista.jsp</file>
+        </group>
+    </open-files>
+</project-private>

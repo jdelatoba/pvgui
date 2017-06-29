@@ -1,0 +1,222 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 07-nov-2015, 12:05:16
+    Author     : Informatica
+*/
+
+    @font-face {
+        font-family: 'NotoSans';
+        src:
+            local('NotoSans'),
+            local('NotoSans-Regular'),
+            url('NotoSans-Regular.ttf');
+    }
+
+    body { 
+        /* background: url("${pageContext.request.contextPath}/resources/img/balandra.jpg") no-repeat center center fixed; */
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        font-family: 'Noto Sans', sans-serif;
+        
+
+    }
+
+    html,
+    body {
+        height: 100%;
+        /* The html and body elements cannot have any padding or margin. */
+    }
+
+    /* Wrapper for page content to push down footer */
+    #wrap {
+        min-height: 100%;
+        height: auto !important;
+        height: 100%;
+        /* Negative indent footer by it's height */
+        margin: 0 auto -60px;
+    }
+
+    /* Set the fixed height of the footer here */
+    #push,
+    #footer {
+        height: 60px;
+    }
+    #footer {
+        background-color: #f5f5f5;
+    }
+
+    /* Lastly, apply responsive CSS fixes as necessary */
+    @media (max-width: 767px) {
+        #footer {
+            margin-left: -20px;
+            margin-right: -20px;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+    }
+
+
+
+    /* Custom page CSS
+    -------------------------------------------------- */
+    /* Not required for template or sticky footer method. */
+
+    #wrap > .container {
+        padding-top: 60px;
+    }
+    .container .credit {
+        margin: 20px 0;
+    }
+
+    code {
+        font-size: 80%;
+    }
+
+
+    a.navbar-brand{
+        text-decoration: none;
+        color: #265a84;
+    }
+
+
+
+    .panel-default {
+
+        margin-top:30px;
+
+
+    }
+
+
+    .container-full {
+        margin: 0 auto;
+        width: 100%;
+    }
+
+    .navbar-top-menu{
+        background: #f8f8f8;
+        
+    }
+
+    .navbar-top-menu-cols{
+        margin-top:10px;
+        margin-bottom:10px;
+    }
+
+
+
+    .navbar-default  {
+        color: #ffffff!important;
+
+    }
+
+    .navbar-brand{
+        color: #5b5b5b!important;
+    }
+
+    
+    .panel-default > .panel-heading-custom {
+        
+        background-color: #f5f5f5!important;
+        color: #5b5b5b!important; 
+        
+
+    }
+
+    .panel-default > .panel-heading-salmon {
+        background-color: #f65f6e!important;
+        color: #ffffff!important; 
+
+    }
+
+    .panel-default > .panel-heading-verde {
+        background-color: #1f9c59!important;
+        color: #ffffff!important; 
+
+    }
+
+    .panel-default > .panel-heading-bluen {
+        background-color: #566372!important;
+        color: #ffffff!important; 
+
+    }
+    
+    .panel-default-gray{
+        border-color: #dedede!important;
+        box-shadow: 1px 2px #dedede!important;
+
+    }
+
+    .panel-default-blued {
+        border-color: #344253!important;
+        box-shadow: 1px 2px #344253!important;
+    }
+
+    .panel-default-aqua {
+        border-color: #63c4c2!important;
+        box-shadow: 1px 2px #63c4c2!important;
+    }
+
+    .panel-default-salmon {
+        border-color: #f65f6e!important;
+        box-shadow: 1px 2px #f65f6e!important; 
+    }
+
+    .panel-default-verde {
+        border-color: #1f9c59!important;
+        box-shadow: 1px 2px #1f9c59!important; 
+    }
+
+    .panel-default-bluen {
+        border-color: #566372!important;
+        box-shadow: 1px 2px #566372!important; 
+    }
+
+    .btn-aqua{
+        box-shadow: 1px 2px #63c4c2!important; 
+    }
+
+    .btn-salmon{
+        box-shadow: 1px 2px #f65f6e!important; 
+    }
+
+    .btn-verde{
+        box-shadow: 1px 2px #1f9c59!important; 
+    }
+
+    .btn-bluen{
+        box-shadow: 1px 2px #566372!important; 
+    }
+
+    .label-aqua{
+        background-color: #ffffff!important;
+        color: #000000!important;
+
+        box-shadow: 1px 2px #63c4c2!important;
+    }
+
+    .label-salmon{
+        background-color: #ffffff!important;
+        color: #000000!important;
+
+        box-shadow: 1px 2px #f65f6e!important; 
+    }
+
+    .label-bluen{
+        background-color: #ffffff!important;
+        color: #000000!important;
+
+        box-shadow: 1px 2px #566372!important; 
+    }
+    
+    #page-wrapper2 {
+   
+    min-height: 568px;
+    background-color: white;
+}

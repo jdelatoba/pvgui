@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="http://app.contraloria.bcs.gob.mx:8080/pvnube/wsAutentificacion?wsdl" uri="wsdl/app.contraloria.bcs.gob.mx_8080/pvnube/wsAutentificacion.wsdl"/>
+    <system systemId="http://app.contraloria.bcs.gob.mx:8080/pvnube/wsAutentificacion?xsd=1" uri="wsdl/app.contraloria.bcs.gob.mx_8080/pvnube/wsAutentificacion.xsd_1.xsd"/>
+    <system systemId="http://localhost:8084/pvnube/wsAutentificacion?wsdl" uri="wsdl/localhost_8084/pvnube/wsAutentificacion.wsdl"/>
+    <system systemId="http://localhost:8084/pvnube/wsAutentificacion?xsd=1" uri="wsdl/localhost_8084/pvnube/wsAutentificacion.xsd_1.xsd"/>
+    <system systemId="http://10.12.6.54:8084/pvnube/wsAutentificacion?wsdl" uri="wsdl/10.12.6.54_8084/pvnube/wsAutentificacion.wsdl"/>
+    <system systemId="http://10.12.6.54:8084/pvnube/wsAutentificacion?xsd=1" uri="wsdl/10.12.6.54_8084/pvnube/wsAutentificacion.xsd_1.xsd"/>
+    <system systemId="http://app.contraloria.bcs.gob.mx:8080/pvnube/WsNubePVChoya?wsdl" uri="wsdl/app.contraloria.bcs.gob.mx_8080/pvnube/WsNubePVChoya.wsdl"/>
+    <system systemId="http://app.contraloria.bcs.gob.mx:8080/pvnube/WsNubePVChoya?xsd=1" uri="wsdl/app.contraloria.bcs.gob.mx_8080/pvnube/WsNubePVChoya.xsd_1.xsd"/>
+</catalog>

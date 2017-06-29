@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.3.1.final using JasperReports Library version 6.3.1  -->
+<!-- 2016-10-24T23:28:27 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="reporte_agenda_all" pageWidth="792" pageHeight="612" orientation="Landscape" columnWidth="752" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="b8b94fd1-8663-42ee-929b-0bd690eb2d30">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Agenda-local"/>
+	<parameter name="inicio" class="java.lang.String"/>
+	<parameter name="inicio_format" class="java.lang.String"/>
+	<parameter name="fin" class="java.lang.String"/>
+	<parameter name="fin_format" class="java.lang.String"/>
+	<parameter name="ejecutivo_id" class="java.lang.Integer"/>
+	<parameter name="dependencia_id" class="java.lang.Integer"/>
+	<parameter name="subsecretaria_id" class="java.lang.Integer"/>
+	<parameter name="municipio_id" class="java.lang.Integer"/>
+	<queryString>
+		<![CDATA[select a.id
+,a.evento
+,a.lugar
+,date_format(a.cuando,'%d/%m/%Y %H:%i') as cuando
+,a.aforo
+,a.observacion
+,a.municipio_id
+,a.localidad_id
+,a.dependencia_id
+,b.nombre as municipio_desc
+,ifnull(c.nombre,'N/D') as localidad_desc
+,upper(d.nombre) as dependencia_desc
+from ag_evento a
+left join cat_municipio b
+on a.municipio_id = b.id
+left join cat_localidad c
+on a.municipio_id = c.municipio_id
+and a.localidad_id = c.id
+left join cat_dependencia d
+on a.dependencia_id = d.id
+where a.dependencia_id = $P{dependencia_id}
+and a.municipio_id = $P{municipio_id} 
+and a.cuando  between str_to_date(  $P{inicio}  ,'%Y/%m/%d %H:%i:%s') 
+and str_to_date(  $P{fin} ,'%Y/%m/%d %H:%i:%s')
+order by a.dependencia_id, a.municipio_id, a.cuando]]>
+	</queryString>
+	<field name="id" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="evento" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="lugar" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cuando" class="java.lang.String"/>
+	<field name="aforo" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="observacion" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="municipio_id" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="localidad_id" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="dependencia_id" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="municipio_desc" class="java.lang.String"/>
+	<field name="localidad_desc" class="java.lang.String"/>
+	<field name="dependencia_desc" class="java.lang.String"/>
+	<group name="grpDependencia" isStartNewPage="true" isReprintHeaderOnEachPage="true">
+		<groupExpression><![CDATA[$F{dependencia_id}]]></groupExpression>
+		<groupHeader>
+			<band height="20">
+				<textField isStretchWithOverflow="true">
+					<reportElement x="0" y="0" width="750" height="20" uuid="0e3c3365-23ba-4ffb-a9be-269bc637e24e">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					</reportElement>
+					<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+						<pen lineWidth="1.0"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="MiLetra" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{dependencia_desc}]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupHeader>
+	</group>
+	<group name="grpMunicipio" isReprintHeaderOnEachPage="true">
+		<groupExpression><![CDATA[$F{municipio_id}]]></groupExpression>
+		<groupHeader>
+			<band height="42">
+				<textField>
+					<reportElement x="0" y="0" width="750" height="20" uuid="5fc5766f-e520-48d9-adcd-555424633138">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					</reportElement>
+					<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+						<pen lineWidth="1.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="MiLetra" size="10" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{municipio_desc}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement mode="Opaque" x="270" y="21" width="100" height="20" backcolor="#E0E0E0" uuid="4997be58-bb87-4163-bbe6-7b2c5a1b8e4d">
+						<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					</reportElement>
+					<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+						<pen lineWidth="1.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[FECHA]]></text>
+				</staticText>
+				<staticText>
+					<reportElement mode="Opaque" x="510" y="21" width="240" height="20" backcolor="#E0E0E0" uuid="ead5903b-cb59-4b46-8410-1227df6160e9"/>
+					<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+						<pen lineWidth="1.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[AFORO]]></text>
+				</staticText>
+				<staticText>
+					<reportElement mode="Opaque" x="370" y="21" width="140" height="20" backcolor="#E0E0E0" uuid="5c1e4331-0277-482a-8acd-5d6939e86b18"/>
+					<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+						<pen lineWidth="1.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[LUGAR]]></text>
+				</staticText>
+				<staticText>
+					<reportElement mode="Opaque" x="0" y="21" width="270" height="20" backcolor="#E0E0E0" uuid="a4d070d2-4672-4943-8d61-f269cb518cb5">
+						<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					</reportElement>
+					<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+						<pen lineWidth="1.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="MiLetra" size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[EVENTO]]></text>
+				</staticText>
+			</band>
+		</groupHeader>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="77" splitType="Stretch">
+			<image hAlign="Center" vAlign="Middle" onErrorType="Blank">
+				<reportElement x="0" y="2" width="230" height="50" uuid="ccbbb8c6-4843-4bc8-b12b-207731b19a60"/>
+				<imageExpression><![CDATA["http://agenda.bcs.gob.mx:8080/agenda/resources/img/logo-gobbcs.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="230" y="2" width="520" height="30" uuid="283c493b-266a-45bd-8147-b5c6c2ccc25c"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="MiLetra" size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SECRETARÍA PARTICULAR]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="230" y="32" width="100" height="20" uuid="367280dc-58f9-4174-83bb-9ae693d8f324"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="MiLetra" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DESDE:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="330" y="32" width="100" height="20" uuid="23915a88-5622-4418-bf7b-7427d688641b">
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="MiLetra" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{inicio_format}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="550" y="30" width="100" height="20" uuid="dff0edf9-5133-42ce-b15e-f7d6d65a858e"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="MiLetra" isBold="true"/>
+				</textElement>
+				<text><![CDATA[HASTA:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="650" y="30" width="100" height="20" uuid="fc3da2fb-75ac-4ad2-98e5-01757ba375b9">
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="MiLetra" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{fin_format}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="270" y="0" width="100" height="20" uuid="ff504fc2-304a-482e-a48a-a12f0cd32548"/>
+				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="MiLetra"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cuando}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="370" y="0" width="140" height="20" uuid="d20d73c3-56a1-42cc-a788-a693f003b090"/>
+				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="MiLetra"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{lugar}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="510" y="0" width="240" height="20" uuid="a91dc11a-4274-4039-bdc0-1bcdb0415ff6"/>
+				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="MiLetra"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{aforo}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="270" height="20" uuid="e50f0d73-71fa-4ad2-916b-7d2629ee83c5">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+				</reportElement>
+				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="MiLetra"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{evento}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="36" splitType="Stretch">
+			<textField>
+				<reportElement x="650" y="20" width="50" height="16" uuid="46ddbbc1-33f3-4468-99e4-8627436c35b9"/>
+				<textElement textAlignment="Right">
+					<font fontName="MiLetra" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Pagina " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="700" y="20" width="50" height="16" uuid="f3d04232-d176-4e24-9fc0-7d0893175678"/>
+				<textElement textAlignment="Left">
+					<font fontName="MiLetra" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" de " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

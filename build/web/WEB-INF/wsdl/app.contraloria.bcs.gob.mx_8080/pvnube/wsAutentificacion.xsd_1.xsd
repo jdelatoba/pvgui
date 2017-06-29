@@ -1,0 +1,83 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is JAX-WS RI 2.2-hudson-740-. --><xs:schema xmlns:tns="http://ws.administracion.pv.sys.choya.app.nube/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://ws.administracion.pv.sys.choya.app.nube/">
+
+<xs:element name="doAutentifica" type="tns:doAutentifica" />
+
+<xs:element name="doAutentificaResponse" type="tns:doAutentificaResponse" />
+
+<xs:element name="getArticulos" type="tns:getArticulos" />
+
+<xs:element name="getArticulosMatriz" type="tns:getArticulosMatriz" />
+
+<xs:element name="getArticulosMatrizResponse" type="tns:getArticulosMatrizResponse" />
+
+<xs:element name="getArticulosResponse" type="tns:getArticulosResponse" />
+
+<xs:element name="hello" type="tns:hello" />
+
+<xs:element name="helloResponse" type="tns:helloResponse" />
+
+<xs:complexType name="getArticulosMatriz">
+<xs:sequence />
+</xs:complexType>
+
+<xs:complexType name="getArticulosMatrizResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="doAutentifica">
+<xs:sequence>
+<xs:element name="usr" type="xs:string" minOccurs="0" />
+<xs:element name="pass" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="doAutentificaResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:int" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="hello">
+<xs:sequence>
+<xs:element name="name" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="helloResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getArticulos">
+<xs:sequence />
+</xs:complexType>
+
+<xs:complexType name="getArticulosResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:jsonObject" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="jsonObject">
+<xs:complexContent>
+<xs:extension base="tns:hashMap">
+<xs:sequence />
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="hashMap">
+<xs:complexContent>
+<xs:extension base="tns:abstractMap">
+<xs:sequence />
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="abstractMap" abstract="true">
+<xs:sequence />
+</xs:complexType>
+</xs:schema>

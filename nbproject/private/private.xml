@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/C:/jdelatoba/desarrollos/SistemaPV/pvgui/web/WEB-INF/view/almacen/traspasoEntrada.jsp</file>
+            <file>file:/C:/jdelatoba/desarrollos/SistemaPV/pvgui/src/java/app/choya/sys/pv/dao/Urleables.java</file>
+            <file>file:/C:/jdelatoba/desarrollos/SistemaPV/pvgui/web/WEB-INF/view/almacen/compraSolicitud.jsp</file>
+            <file>file:/C:/jdelatoba/desarrollos/SistemaPV/pvgui/web/WEB-INF/view/catalogos/articulo.jsp</file>
+            <file>file:/C:/jdelatoba/desarrollos/SistemaPV/pvgui/src/java/app/choya/sys/pv/catalogo/servlet/CategoriaListaJSON.java</file>
+            <file>file:/C:/jdelatoba/desarrollos/SistemaPV/pvgui/web/WEB-INF/view/main/hub.jsp</file>
+            <file>file:/C:/jdelatoba/desarrollos/SistemaPV/pvgui/web/WEB-INF/view/catalogos/cliente.jsp</file>
+            <file>file:/C:/jdelatoba/desarrollos/SistemaPV/pvgui/web/WEB-INF/view/almacen/compraEntrada.jsp</file>
+            <file>file:/C:/jdelatoba/desarrollos/SistemaPV/pvgui/src/java/app/choya/sys/pv/controller/MainController.java</file>
+            <file>file:/C:/jdelatoba/desarrollos/SistemaPV/pvgui/src/java/app/choya/sys/pv/catalogo/servlet/ArticuloController.java</file>
+            <file>file:/C:/jdelatoba/desarrollos/SistemaPV/pvgui/web/WEB-INF/view/almacen/traspasoSalida.jsp</file>
+            <file>file:/C:/jdelatoba/desarrollos/SistemaPV/pvgui/web/WEB-INF/view/almacen/compraSalida.jsp</file>
+            <file>file:/C:/jdelatoba/desarrollos/SistemaPV/pvgui/src/java/app/choya/sys/pv/controller/Hub.java</file>
+            <file>file:/C:/jdelatoba/desarrollos/SistemaPV/pvgui/web/WEB-INF/view/almacen/traspasoSolicitud.jsp</file>
+        </group>
+    </open-files>
+</project-private>
